@@ -1,0 +1,56 @@
+.alert {
+  position: relative;
+  width: 380px;
+  padding: 15px;
+  box-sizing: border-box;
+  color: #000;
+  font-size: 1rem;
+  line-height: 1.5;
+  display: flex;
+  word-wrap: break-word;
+  border-radius: 0.25rem;
+}
+
+.alert-default {
+  background-color: $primary;
+  color: $white !important;
+}
+.alert-success {
+  background-color: $success;
+  color: $white !important;
+}
+.alert-danger {
+  background-color: $danger;
+  color: $white !important;
+}
+.alert-warning {
+  background-color: $warning;
+  color: $white !important;
+}
+.alert-close-icon {
+  margin-left: 8px;
+  padding: 0;
+  overflow: hidden;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.alert-content {
+  flex: 1;
+  min-width: 0;
+  .alert-message {
+    display: block;
+    margin-bottom: 0.15rem;
+    font-weight: $font-weight-bold;
+    // color: #000;
+    font-size: $font-size-lg;
+  }
+  .alert-description {
+    display: block;
+    font-size: $font-size-sm;
+    line-height: $line-height-base;
+  }
+}
