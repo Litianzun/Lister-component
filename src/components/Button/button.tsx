@@ -1,6 +1,7 @@
 import React from "react";
 import classNames from "classnames";
-import Icon, { IconProps } from "../Icon/icon";
+import Icon from "../Icon/icon";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 export enum ButtonSize {
   Large = "lg",
@@ -23,7 +24,7 @@ export interface BaseButtonProps {
   size?: size;
   btnType?: types;
   href?: string;
-  icon?: React.ReactElement<IconProps>;
+  icon?: React.FunctionComponentElement<IconProp>;
   loading?: boolean;
   children: React.ReactNode;
 }

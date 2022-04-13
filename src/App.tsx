@@ -10,10 +10,32 @@ import Icon from "./components/Icon/icon";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import Transition from "./components/Transition/transition";
+import Input from "./components/Input/input";
+import AutoComplete from "./components/AutoComplete/autoComplete";
+import Select from "./components/Select/select";
+import SelectOptions from "./components/Select/option";
 library.add(fas);
 
+type Ilogin = {
+  login: string;
+};
 function App() {
   const [show, setShow] = useState(false);
+  const [inputValue, setValue] = useState("");
+  const handleFetch = (query: string) => {
+    return fetch(`https://api.github.com/search/users?q=${query}`)
+      .then((res) => res.json())
+      .then(({ items }) => {
+        console.log(items);
+        return items.slice(0, 10).map((item: Ilogin) => ({
+          value: item.login,
+          ...item,
+        }));
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  };
   return (
     <div className="App">
       <Button
@@ -27,7 +49,9 @@ function App() {
         primary button
       </Button>
       <Button btnType="default">default button</Button>
-      <Button btnType="danger" loading>danger button</Button>
+      <Button btnType="danger" loading>
+        danger button
+      </Button>
       <br />
       <Button btnType="primary" size="lg" icon={<Icon icon="coffee" theme="light" />}>
         large
@@ -92,6 +116,37 @@ function App() {
         <TabItem label="label2">tab2</TabItem>
         <TabItem label="label3">tab3</TabItem>
       </Tabs>
+      <Input
+        size="lg"
+        placeholder="请填写内容"
+        defaultValue="123"
+        value={inputValue}
+        onChange={(e) => {
+          setValue(e.target.value);
+        }}
+      />
+      <AutoComplete fetchSuggestions={handleFetch} placeholder="请输入" />
+      <Select
+        onChange={(index) => {
+          console.log(index);
+        }}
+        defaultValue={['option1']}
+      >
+        <SelectOptions label="label1" value="option1"></SelectOptions>
+        <SelectOptions label="label2" value="option2"></SelectOptions>
+        <SelectOptions label="label3" value="option3"></SelectOptions>
+      </Select>
+      <Select
+        onChange={(index) => {
+          console.log(index);
+        }}
+        multiple
+        defaultValue={['option1']}
+      >
+        <SelectOptions label="label1" value="option1"></SelectOptions>
+        <SelectOptions label="label2" value="option2"></SelectOptions>
+        <SelectOptions label="label3" value="option3"></SelectOptions>
+      </Select>
     </div>
   );
 }
