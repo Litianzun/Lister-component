@@ -1,4 +1,3 @@
-import React from "react";
 import { render } from "@testing-library/react";
 import Alert, { AlertType } from "./alert";
 
@@ -14,7 +13,7 @@ const typeProps = {
 };
 describe("test alert component", () => {
   it("alert组件default渲染", () => {
-    const { queryByText, container, getByText } = render(<Alert {...testProps} />)
+    const { queryByText, container } = render(<Alert {...testProps} />)
     expect(queryByText("msg")).toBeInTheDocument()
     expect(container.querySelector(".alert")).toHaveClass("alert-default")
   })

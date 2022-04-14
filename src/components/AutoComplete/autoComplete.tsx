@@ -54,7 +54,7 @@ const AutoComplete: FC<AutoCompleteProps> = (props) => {
       setShowDropdown(false);
     }
     setHighlightIndex(-1);
-  }, [debouncedValue]);
+  }, [debouncedValue, fetchSuggestions]);
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setInputValue(value);

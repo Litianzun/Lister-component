@@ -1,5 +1,5 @@
 import React from "react";
-import { ComponentStory, ComponentMeta, Story, Meta } from "@storybook/react";
+import { Story, Meta } from "@storybook/react";
 import "../../styles/index.scss";
 import Select, { SelectProps } from "./select";
 import SelectOptions from "./option";

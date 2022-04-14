@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { ComponentStory, ComponentMeta, Story, Meta } from "@storybook/react";
+import { Story, Meta } from "@storybook/react";
 // import { Meta, ArgsTable} from '@storybook/addon-docs'
 import "../../styles/index.scss";
 
 import Component, { InputProps } from "./input";
-import Icon from "../Icon/icon";
 
 export const Input: React.FC<InputProps> = (args: any) => {
   return <Component placeholder="请输入" {...args} />;

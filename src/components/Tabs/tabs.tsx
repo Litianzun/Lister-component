@@ -21,7 +21,7 @@ interface ITabContext {
 export const TabContext = createContext<ITabContext>({ index: "0" });
 
 const Tabs: React.FC<TabProps> = (props) => {
-  const { className, defaultIndex, style, onSelect, children, type } = props;
+  const { className, defaultIndex, onSelect, children, type } = props;
   const [currentActive, setActive] = useState(defaultIndex);
   const handleClick = (index: string) => {
     setActive(index);

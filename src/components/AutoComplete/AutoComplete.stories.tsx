@@ -1,5 +1,5 @@
 import React from "react";
-import { ComponentStory, ComponentMeta, Story, Meta } from "@storybook/react";
+import { Story, Meta } from "@storybook/react";
 import "../../styles/index.scss";
 import { Title, Subtitle, Description, Primary, ArgsTable, Stories, PRIMARY_STORY } from "@storybook/addon-docs";
 import Component, { AutoCompleteProps, DataSourceType } from "./autoComplete";
@@ -109,10 +109,3 @@ asyncData.args = {
 };
 
 export const RenderOptions: Story<AutoCompleteProps> = (args) => <AutoComplete fetchSuggestions={mockSuggestions} renderOptions={(item: DataSourceType) => <strong style={{ color: "red" }}>{item.value}</strong>} />;
-
-const styles = {
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  gap: "10px",
-};

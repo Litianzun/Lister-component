@@ -2,6 +2,7 @@ import React from "react";
 import classNames from "classnames";
 import Transition from "../Transition/transition";
 import Icon from "../Icon/icon";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 export enum AlertType {
   Success = "success",
@@ -40,9 +41,7 @@ const Alert: React.FC<BaseAlertProps> = (props) => {
           <div className="alert-message">{message}</div>
           <div className="alert-description">{description}</div>
         </div>
-        <Icon className="alert-close-icon" onClick={handleClose} icon="close" style={{ display: closable ? "block" : "none" }}>
-          x
-        </Icon>
+        <Icon className="alert-close-icon" onClick={handleClose} icon={faXmark} style={{ display: closable ? "block" : "none" }} />
       </div>
     </Transition>
   );

@@ -1,9 +1,9 @@
 import React from "react";
-import { ComponentStory, ComponentMeta, Story, Meta } from "@storybook/react";
+import { Story, Meta } from "@storybook/react";
 // import { Meta, ArgsTable} from '@storybook/addon-docs'
 import "../../styles/index.scss";
 
-import Component, { ButtonProps, BaseButtonProps, ButtonType, ButtonSize } from "./button";
+import Component, { ButtonProps } from "./button";
 import Icon from "../Icon/icon";
 
 export const Button: React.FC<ButtonProps> = (args: any) => {

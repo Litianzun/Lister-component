@@ -1,5 +1,5 @@
 import React from "react";
-import { ComponentStory, ComponentMeta, Story, Meta } from "@storybook/react";
+import { Story, Meta } from "@storybook/react";
 import "../../styles/index.scss";
 import Component, { BaseAlertProps } from "./alert";
 import { library } from "@fortawesome/fontawesome-svg-core";

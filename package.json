@@ -33,7 +33,7 @@
   "scripts": {
     "start": "react-scripts start",
     "clean": "rimraf ./build",
-    "lint": "eslint --ext js,ts,tsx src --max-warnings 5",
+    "lint": "eslint --fix --ext js,ts,tsx src --max-warnings 5",
     "build": "npm run clean && npm run build-ts && npm run build-css",
     "test": "react-scripts test",
     "test:nowatch": "cross-env CI=true react-scripts test",
@@ -44,7 +44,8 @@
     "build-storybook-docs": "build-storybook --docs",
     "build-ts": "tsc -p tsconfig.build.json",
     "build-css": "node-sass ./src/styles/index.scss ./build/index.css",
-    "prepublishOnly": "npm run test:nowatch && npm run lint && npm run build"
+    "prepublishOnly": "npm run test:nowatch && npm run lint && npm run build",
+    "prepare": "husky install"
   },
   "husky": {
     "hooks": {

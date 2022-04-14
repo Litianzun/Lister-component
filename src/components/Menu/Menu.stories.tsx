@@ -1,5 +1,5 @@
 import React from "react";
-import { ComponentStory, ComponentMeta, Story, Meta } from "@storybook/react";
+import { Story, Meta } from "@storybook/react";
 import "../../styles/index.scss";
 import Menu, { MenuProps } from "./menu";
 import MenuItem from "./menuItem";
