@@ -92,13 +92,6 @@ function App() {
           <MenuItem>dropdown3</MenuItem>
         </SubMenu>
       </Menu>
-      <Button
-        onClick={() => {
-          setShow(!show);
-        }}
-      >
-        toggle
-      </Button>
       <Transition in={show} timeout={300} animation="zoom-in-left" wrapper>
         <>
           <Icon icon="coffee" theme="primary" size="10x" />
@@ -147,6 +140,13 @@ function App() {
         <SelectOptions label="label2" value="option2"></SelectOptions>
         <SelectOptions label="label3" value="option3"></SelectOptions>
       </Select>
+      <Button
+        onClick={() => {
+          setShow(!show);
+        }}
+      >
+        toggle
+      </Button>
     </div>
   );
 }
