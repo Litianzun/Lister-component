@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Alert from "./components/Alert/alert";
 import Button from "./components/Button/button";
 import Menu from "./components/Menu/menu";
@@ -123,7 +123,7 @@ function App() {
         onChange={(index) => {
           console.log(index);
         }}
-        defaultValue={['option1']}
+        defaultValue={["option1"]}
       >
         <SelectOptions label="label1" value="option1"></SelectOptions>
         <SelectOptions label="label2" value="option2"></SelectOptions>
@@ -134,7 +134,7 @@ function App() {
           console.log(index);
         }}
         multiple
-        defaultValue={['option1']}
+        defaultValue={["option1"]}
       >
         <SelectOptions label="label1" value="option1"></SelectOptions>
         <SelectOptions label="label2" value="option2"></SelectOptions>

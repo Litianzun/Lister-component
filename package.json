@@ -1,7 +1,7 @@
 {
   "name": "lister-app",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.1.1",
+  "private": false,
   "description": "React components UI library",
   "author": "lidong",
   "main": "build/index.js",
